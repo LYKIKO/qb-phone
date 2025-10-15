@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+.lawyers-app {
+    display: none;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    backdrop-filter: blur(20px);
+}
+
+.lawyers-header {
+    position: absolute;
+    width: 100%;
+    height: 12vh;
+    top: 0;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.6vh;
+    display: flex;
+    align-items: center;
+    padding: 0 2vh;
+}
+
+.lawyers-header > p {
+    margin: 0;
+    padding-left: 7vh;
+    font-size: 1.7vh;
+    letter-spacing: 0.5px;
+}
+
+.lawyers-header > span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 9vh;
+    font-size: 1.1vh;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.lawyers-list {
+    position: absolute;
+    width: 90%;
+    height: 75%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 3%;
+    border-radius: 1.4vh;
+    overflow-y: scroll;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.8vh;
+}
+
+.lawyers-list::-webkit-scrollbar {
+    display: none;
+}
+
+.lawyer-list {
+    position: relative;
+    width: 97%;
+    height: 5.5vh;
+    margin: 0.7vh auto;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 1.8vh;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.lawyer-list:hover {
+    background: rgba(255, 255, 255, 0.12);
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.lawyer-list-firstletter {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3.8vh;
+    height: 3.8vh;
+    background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+    text-align: center;
+    left: 1.2vh;
+    line-height: 3.8vh;
+    border-radius: 1.9vh;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.5vh;
+    color: white;
+    box-shadow: 0 3px 10px rgba(74, 144, 226, 0.4);
+}
+
+.lawyer-list:hover .lawyer-list-firstletter {
+
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.5);
+}
+
+.lawyer-list-fullname {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 6vh;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.35vh;
+    max-width: 15vh;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    color: white;
+    letter-spacing: 0.2px;
+    transition: all 0.25s ease;
+}
+
+.lawyer-list:hover .lawyer-list-fullname {
+    color: rgba(255, 255, 255, 0.95);
+    
+}
+
+.no-lawyers {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.3vh;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    max-width: 20vh;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+}
+
+.lawyer-list-call {
+    color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    right: 1.8vh;
+    font-size: 2vh;
+    width: 3.2vh;
+    height: 3.2vh;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.lawyer-list-call:hover {
+    color: #4CD964;
+    background: rgba(76, 217, 100, 0.15);
+    transform: translateY(-50%) rotate(0deg) scale(1.1);
+    cursor: pointer;
+    border-color: rgba(76, 217, 100, 0.4);
+    box-shadow: 0 0 25px rgba(76, 217, 100, 0.35);
+}
+
+/* iOS-like status bar */
+.lawyers-header::before {
+    content: '';
+    position: absolute;
+    top: 0.6vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 11vh;
+    height: 0.35vh;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 1vh;
+    backdrop-filter: blur(10px);
+}
+
+/* Subtle container glow */
+.lawyers-list::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 1.4vh;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        transparent 20%, 
+        transparent 80%, 
+        rgba(255, 255, 255, 0.05) 100%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Smooth scroll momentum */
+.lawyers-list {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+/* Optimized performance */
+.lawyer-list {
+    will-change: transform, background;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Enhanced empty state */
+.no-lawyers::before {
+    font-size: 3vh;
+    display: block;
+    margin-bottom: 1vh;
+    opacity: 0.7;
+}
